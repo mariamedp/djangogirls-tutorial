@@ -7,16 +7,13 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <h2><a href="">Primer post</a></h2>
-            <p>publicado: 14/06/2014, 12:14</p>
-            <p>Lorem Rajoy Ipsum ¿Y la europea? fin de la cita y cuanto peor para todos mejor una cosa es ser solidario y otra es serlo a cambio de nada cuanto mejor peor para todos exportar es positivo porque vendes lo que produces a veces es mejor estar quieto y en otras no it's very difficult todo esto como decía Galileo, el movimiento siempre se acelera cuando se va detener.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>publicado: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <h2><a href="">Segundo post</a></h2>
-            <p>publicado: 01/01/2018, 13:31</p>
-            <p>Lorem Rajoy Ipsum no fue cosa menor los vecinos el alcalde por las carreteras tienen que ir coches y de los aeropuertos tienen que salir aviones.</p>
-        </div>
     </body>
 </html>
